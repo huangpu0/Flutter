@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'Container_Text.dart';
+import 'package:flutter01/02_Image.dart';
+import '01_Container_Text.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -7,14 +8,19 @@ void main() {
       appBar: AppBar(title: const Text('你好Flutter'),),
       body: const Column(
         children: [
-          MyApp(), 
-        MyButton(),
-        MyText()],
+          MyImage(), 
+        Circular(),
+        ClipImage(),
+        LoaclImage()],
       ))
   ));
 }
 
+/// 01_Container_Text
+/// MyApp(), MyButton(), MyText()
 
+/// 02_Image
+/// MyImage(), Circular(), ClipImage(), LoaclImage()
 
 
 // class MyApp extends StatelessWidget {
