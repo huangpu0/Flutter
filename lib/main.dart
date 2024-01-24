@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter01/02_Image.dart';
+import 'package:flutter01/03_Icon.dart';
 import '01_Container_Text.dart';
 
 void main() {
   runApp(MaterialApp(
-    home: Scaffold(
-      appBar: AppBar(title: const Text('你好Flutter'),),
-      body: const Column(
-        children: [
-          MyImage(), 
-        Circular(),
-        ClipImage(),
-        LoaclImage()],
-      ))
-  ));
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: Scaffold(
+          appBar: AppBar(
+            title: const Text('你好Flutter'),
+          ),
+          body: const Column(
+            children: [MyIcon()],
+          ))));
 }
 
 /// 01_Container_Text
