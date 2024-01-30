@@ -1,0 +1,4 @@
+name: xxx
+description: A new Flutter module peojiect
+dependencies:
+  http: ^1.2.0
