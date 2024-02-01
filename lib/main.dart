@@ -3,6 +3,7 @@ import 'package:flutter01/02_Image.dart';
 import 'package:flutter01/03_Icon.dart';
 import 'package:flutter01/04_ListView.dart';
 import 'package:flutter01/05_GridView.dart';
+import 'package:flutter01/06_Padding.dart';
 import '01_Container_Text.dart';
 
 void main() {
@@ -14,7 +15,7 @@ void main() {
         appBar: AppBar(
           title: const Text('你好Flutter'),
         ),
-        body: const MyGridView1(),
+        body: const MyFlex0(),
       )));
 }
 
@@ -32,6 +33,13 @@ void main() {
 
 /// 05_GridView
 /// MyGridView0(), MyGridView1(), 
+
+/// 06_页面布局
+/// MyPadding0(), MyRow0(), MyFlex0(),
+
+
+
+
 
 // class MyApp extends StatelessWidget {
 //   const MyApp({super.key});
