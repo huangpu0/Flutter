@@ -6,6 +6,7 @@ import 'package:flutter01/04_ListView.dart';
 import 'package:flutter01/05_GridView.dart';
 import 'package:flutter01/06_Padding.dart';
 import 'package:flutter01/07_Stack.dart';
+import 'package:flutter01/08_AspectRation.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -16,7 +17,7 @@ void main() {
         appBar: AppBar(
           title: const Text('你好Flutter'),
         ),
-        body: const MyStack1(),
+        body: const MyAspectRation2(),
       )));
 }
 
@@ -41,6 +42,8 @@ void main() {
 /// 07_Stack
 /// MyStack0(), MyStack1(), 
 
+/// 08_AspectRation
+/// MyAspectRation0(), MyAspectRation1(), MyAspectRation2(),
 
 
 // class MyApp extends StatelessWidget {
