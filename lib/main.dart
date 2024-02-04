@@ -9,6 +9,7 @@ import 'package:flutter01/07_Stack.dart';
 import 'package:flutter01/08_AspectRation.dart';
 import 'package:flutter01/09_Button.dart';
 import 'package:flutter01/10_Wrap.dart';
+import 'package:flutter01/11_StatefulWidget.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -19,7 +20,7 @@ void main() {
         appBar: AppBar(
           title: const Text('你好Flutter'),
         ),
-        body: const MyWrap1(),
+        body: const MyStatefulWidget1(),
       )));
 }
 
@@ -52,6 +53,16 @@ void main() {
 
 /// 10_Wrap
 /// MyWrap0(), MyWrap1(),
+
+/// 11_StatefulWidget
+/// MyStatefulWidget0(), MyStatefulWidget1(), 
+
+
+
+
+
+
+
 
 // class MyApp extends StatelessWidget {
 //   const MyApp({super.key});
