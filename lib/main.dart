@@ -10,18 +10,22 @@ import 'package:flutter01/08_AspectRation.dart';
 import 'package:flutter01/09_Button.dart';
 import 'package:flutter01/10_Wrap.dart';
 import 'package:flutter01/11_StatefulWidget.dart';
+import 'package:flutter01/12_BottomNavigationBar.dart';
 
 void main() {
   runApp(MaterialApp(
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('你好Flutter'),
-        ),
-        body: const MyStatefulWidget1(),
-      )));
+    theme: ThemeData(
+      primarySwatch: Colors.blue,
+    ),
+    // home: Scaffold(
+    //   appBar: AppBar(
+    //     title: const Text('你好Flutter'),
+    //   ),
+    //   body: const MyStatefulWidget1(),
+    // ),
+    /// 12_BottomNavigationBar 自定义底部导航条
+    home: const MyBottomNavigationBar0(),
+  ));
 }
 
 /// 01_Container_Text
@@ -56,6 +60,9 @@ void main() {
 
 /// 11_StatefulWidget
 /// MyStatefulWidget0(), MyStatefulWidget1(), 
+
+/// 12_BottomNavigationBar 自定义底部导航条
+/// MyBottomNavigationBar0(), MyBottomNavigationBar1(), 
 
 
 

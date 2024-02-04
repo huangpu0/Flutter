@@ -157,8 +157,8 @@ class MyListView2 extends StatelessWidget {
   }
 }
 
-// ignore: must_be_immutable
 /// 动态数据处理方式
+// ignore: must_be_immutable
 class MyListView3 extends StatelessWidget {
   List<String> list = [];
 
