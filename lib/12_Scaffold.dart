@@ -3,14 +3,14 @@ import 'package:flutter01/12_BottonTabBars/12_home.dart';
 import 'package:flutter01/12_BottonTabBars/12_me.dart';
 import 'package:flutter01/12_BottonTabBars/12_message.dart';
 
-class MyBottomNavigationBar0 extends StatefulWidget {
-  const MyBottomNavigationBar0({super.key});
+class MyScaffold0 extends StatefulWidget {
+  const MyScaffold0({super.key});
 
   @override
-  State<MyBottomNavigationBar0> createState() => _MyBottomNavigationBar0State();
+  State<MyScaffold0> createState() => _MyScaffold0State();
 }
 
-class _MyBottomNavigationBar0State extends State<MyBottomNavigationBar0> {
+class _MyScaffold0State extends State<MyScaffold0> {
   /// 当前选中位置
   int currentPath = 0;
 
@@ -23,6 +23,61 @@ class _MyBottomNavigationBar0State extends State<MyBottomNavigationBar0> {
       appBar: AppBar(
         title: const Text('你好Flutter'),
       ),
+
+      /// 侧边栏
+      drawer: const Drawer(
+          child: Column(
+        children: [
+          Row(
+            children: [
+              Expanded(
+                flex: 1,
+                child: DrawerHeader(
+                    decoration: BoxDecoration(
+                      color: Colors.orange,
+                      image: DecorationImage(
+                          image: AssetImage('images/load_1.png'),
+                          fit: BoxFit.cover),
+                    ),
+                    child: Column(
+                      children: [
+                        ListTile(
+                          leading: CircleAvatar(
+                            child: Icon(Icons.people),
+                          ),
+                          title: Text(
+                            '张三',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 20,
+                            ),
+                          ),
+                        ),
+                      ],
+                    )),
+              )
+            ],
+          ),
+          ListTile(
+            leading: CircleAvatar(
+              child: Icon(Icons.people),
+            ),
+            title: Text('个人信息'),
+          ),
+          Divider(),
+          ListTile(
+            leading: CircleAvatar(
+              child: Icon(Icons.settings),
+            ),
+            title: Text('系统设置'),
+          ),
+          Divider(),
+        ],
+      )),
+      endDrawer: const Drawer(
+        child: Text('右侧侧边栏'),
+      ),
+
       body: tabBars[currentPath],
 
       /// 12_BottomNavigationBar 自定义底部导航条

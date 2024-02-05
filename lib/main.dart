@@ -10,8 +10,8 @@ import 'package:flutter01/08_AspectRation.dart';
 import 'package:flutter01/09_Button.dart';
 import 'package:flutter01/10_Wrap.dart';
 import 'package:flutter01/11_StatefulWidget.dart';
-import 'package:flutter01/12_BottomNavigationBar.dart';
-import 'package:flutter01/13_FloatingActionButton.dart';
+import 'package:flutter01/12_Scaffold.dart';
+import 'package:flutter01/13_AppBar.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -24,8 +24,8 @@ void main() {
     //   ),
     //   body: const MyFloatingActionButton0(),
     // ),
-    /// 12_BottomNavigationBar 自定义底部导航条 + 类似咸鱼底部凸起按钮
-    home: const MyBottomNavigationBar0(),
+    /// 12_Scaffold 自定义底部导航条 + 类似咸鱼底部凸起按钮 + 侧边栏
+    home: const MyScaffold0(),
   ));
 }
 
@@ -62,11 +62,12 @@ void main() {
 /// 11_StatefulWidget
 /// MyStatefulWidget0(), MyStatefulWidget1(), 
 
-/// 12_BottomNavigationBar 自定义底部导航条 + 类似咸鱼底部凸起按钮
-/// MyBottomNavigationBar0(), 
+/// 12_Scaffold 自定义底部导航条(BottomNavigationBar) + 
+/// 类似咸鱼底部凸起按钮(FloatingActionButton) + 侧边栏 (Drawer)
+/// MyScaffold0(), 
 
-/// 13_FloatingActionButton 
-/// MyFloatingActionButton0(), 
+/// 13_AppBar
+/// MyAppBar0(), 
 
 
 
