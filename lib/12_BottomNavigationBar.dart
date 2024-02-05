@@ -54,6 +54,27 @@ class _MyBottomNavigationBar0State extends State<MyBottomNavigationBar0> {
                 ),
                 label: '我的'),
           ]),
+
+      /// FloatingActionButton 类似咸鱼底部凸起按钮
+      floatingActionButton: Container(
+        width: 60,
+        height: 60,
+        padding: const EdgeInsets.all(5),
+
+        /// 调整FloatingActionButton位置
+        margin: const EdgeInsets.only(top: 5),
+        decoration: BoxDecoration(
+            color: Colors.white, borderRadius: BorderRadius.circular(30)),
+        child: FloatingActionButton(
+            backgroundColor: currentPath == 1 ? Colors.red : Colors.blue,
+            child: const Icon(Icons.add),
+            onPressed: () {
+              setState(() {
+                currentPath = 1;
+              });
+            }),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }

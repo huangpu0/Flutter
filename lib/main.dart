@@ -11,6 +11,7 @@ import 'package:flutter01/09_Button.dart';
 import 'package:flutter01/10_Wrap.dart';
 import 'package:flutter01/11_StatefulWidget.dart';
 import 'package:flutter01/12_BottomNavigationBar.dart';
+import 'package:flutter01/13_FloatingActionButton.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -21,9 +22,9 @@ void main() {
     //   appBar: AppBar(
     //     title: const Text('你好Flutter'),
     //   ),
-    //   body: const MyStatefulWidget1(),
+    //   body: const MyFloatingActionButton0(),
     // ),
-    /// 12_BottomNavigationBar 自定义底部导航条
+    /// 12_BottomNavigationBar 自定义底部导航条 + 类似咸鱼底部凸起按钮
     home: const MyBottomNavigationBar0(),
   ));
 }
@@ -61,9 +62,11 @@ void main() {
 /// 11_StatefulWidget
 /// MyStatefulWidget0(), MyStatefulWidget1(), 
 
-/// 12_BottomNavigationBar 自定义底部导航条
-/// MyBottomNavigationBar0(), MyBottomNavigationBar1(), 
+/// 12_BottomNavigationBar 自定义底部导航条 + 类似咸鱼底部凸起按钮
+/// MyBottomNavigationBar0(), 
 
+/// 13_FloatingActionButton 
+/// MyFloatingActionButton0(), 
 
 
 
