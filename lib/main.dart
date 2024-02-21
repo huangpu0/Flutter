@@ -24,7 +24,7 @@ void main() {
     //   ),
     //   body: const MyFloatingActionButton0(),
     // ),
-    /// 12_Scaffold 自定义底部导航条 + 类似咸鱼底部凸起按钮 + 侧边栏
+    /// 12_13_Scaffold 自定义底部导航条 + 类似咸鱼底部凸起按钮 + 侧边栏 + AppBar
     home: const MyScaffold0(),
   ));
 }
@@ -63,10 +63,10 @@ void main() {
 /// MyStatefulWidget0(), MyStatefulWidget1(), 
 
 /// 12_Scaffold 自定义底部导航条(BottomNavigationBar) + 
-/// 类似咸鱼底部凸起按钮(FloatingActionButton) + 侧边栏 (Drawer)
+/// 类似咸鱼底部凸起按钮(FloatingActionButton) + 侧边栏 (Drawer) + 导航栏(AppBar）
 /// MyScaffold0(), 
 
-/// 13_AppBar
+/// 13_AppBar  TabBar、 TabBarView 类似头条头部滑动导航栏
 /// MyAppBar0(), 
 
 
