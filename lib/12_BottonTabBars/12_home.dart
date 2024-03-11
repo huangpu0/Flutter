@@ -18,6 +18,15 @@ class _MyHome12State extends State<MyHome12>
   void initState() {
     super.initState();
     tabController = TabController(length: 2, vsync: this);
+
+    /// 监听tabs 点击事件
+    tabController.addListener(() {
+      // ignore: avoid_print
+      if (tabController.animation!.value == tabController.index) {
+        // ignore: avoid_print
+        print(tabController.index);
+      }
+    });
   }
 
   /// 当前选中位置

@@ -12,21 +12,25 @@ import 'package:flutter01/10_Wrap.dart';
 import 'package:flutter01/11_StatefulWidget.dart';
 import 'package:flutter01/12_Scaffold.dart';
 import 'package:flutter01/13_AppBar.dart';
+import 'package:flutter01/14_Navigator.dart';
 
 void main() {
-  runApp(MaterialApp(
-    theme: ThemeData(
-      primarySwatch: Colors.blue,
-    ),
-    // home: Scaffold(
-    //   appBar: AppBar(
-    //     title: const Text('你好Flutter'),
-    //   ),
-    //   body: const MyFloatingActionButton0(),
-    // ),
-    /// 12_13_Scaffold 自定义底部导航条 + 类似咸鱼底部凸起按钮 + 侧边栏 + AppBar
-    home: const MyScaffold0(),
-  ));
+  // runApp(MaterialApp(
+  //   theme: ThemeData(
+  //     primarySwatch: Colors.blue,
+  //   ),
+  //   // home: Scaffold(
+  //   //   appBar: AppBar(
+  //   //     title: const Text('你好Flutter'),
+  //   //   ),
+  //   //   body: const MyFloatingActionButton0(),
+  //   // ),
+  //   /// 12_13_Scaffold 自定义底部导航条 + 类似咸鱼底部凸起按钮 + 侧边栏 + AppBar
+  //   home: const MyScaffold0(),
+  // ));
+
+  /// 14_Navigator
+  runApp(const MyNavigator0());
 }
 
 /// 01_Container_Text
@@ -69,8 +73,8 @@ void main() {
 /// 13_AppBar  TabBar、 TabBarView 类似头条头部滑动导航栏
 /// MyAppBar0(), 
 
-
-
+/// 14_Navigator 统一管理Router 
+/// MyNavigator0(), 
 
 
 
