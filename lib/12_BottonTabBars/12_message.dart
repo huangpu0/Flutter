@@ -10,8 +10,32 @@ class MyMessage12 extends StatefulWidget {
 class _MyMessage12State extends State<MyMessage12> {
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text('消息'),
+    return Center(
+      child: Column(
+        children: [
+          /// 3、命名路由跳转传值 Dialog
+          ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, "/dialog", arguments: {
+                  "title": "Dialog",
+                  "type": 0,
+                });
+              },
+              child: const Text('Dialog_Demo')),
+
+          const SizedBox(
+            height: 10,
+          ),
+          ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, "/dialog", arguments: {
+                  "title": "Dialog",
+                  "type": 1,
+                });
+              },
+              child: const Text('Dialog_1_')),
+        ],
+      ),
     );
   }
 }

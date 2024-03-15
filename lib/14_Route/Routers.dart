@@ -4,12 +4,14 @@ import 'package:flutter01/12_Scaffold.dart';
 //// 统一管理页面跳转 Router
 import 'package:flutter01/14_Navigator/14_News.dart';
 import 'package:flutter01/14_Navigator/14_Search.dart';
+import 'package:flutter01/15_Dialog.dart';
 
 /// 1、配置路由
 final Map routes = {
   "/": (context) => const MyScaffold0(),
   "/news": (context, {arguments}) => NewsPage0(arguments: arguments),
   "/search": (context) => const SearchPage0(title: "SearchPage"),
+  "/dialog": (context, {arguments}) => MyDialog0(arguments: arguments),
 };
 
 /// 2、配置onGenerateRoute 固定写法
