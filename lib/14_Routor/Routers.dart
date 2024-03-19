@@ -5,6 +5,8 @@ import 'package:flutter01/12_Scaffold.dart';
 import 'package:flutter01/14_Navigator/14_News.dart';
 import 'package:flutter01/14_Navigator/14_Search.dart';
 import 'package:flutter01/15_Dialog.dart';
+import 'package:flutter01/16_PageView.dart';
+import 'package:flutter01/16_PageView/16_PageViewKeepAlive.dart';
 
 /// 1、配置路由
 final Map routes = {
@@ -12,6 +14,9 @@ final Map routes = {
   "/news": (context, {arguments}) => NewsPage0(arguments: arguments),
   "/search": (context) => const SearchPage0(title: "SearchPage"),
   "/dialog": (context, {arguments}) => MyDialog0(arguments: arguments),
+  "/pageView": (context, {arguments}) => MyPageView0(arguments: arguments),
+  "/pageViewKeepAlive": (context, {arguments}) =>
+      MyPageViewKeepalive(arguments: arguments),
 };
 
 /// 2、配置onGenerateRoute 固定写法

@@ -122,7 +122,7 @@ class _MyAppBar0State extends State<MyAppBar0>
                     decoration: BoxDecoration(
                       color: Colors.orange,
                       image: DecorationImage(
-                          image: AssetImage('images/load_1.png'),
+                          image: AssetImage('images/load_1.jpeg'),
                           fit: BoxFit.cover),
                     ),
                     child: Column(

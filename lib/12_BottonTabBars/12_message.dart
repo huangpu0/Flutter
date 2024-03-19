@@ -28,12 +28,24 @@ class _MyMessage12State extends State<MyMessage12> {
           ),
           ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, "/dialog", arguments: {
-                  "title": "Dialog",
+                Navigator.pushNamed(context, "/pageView", arguments: {
+                  "title": "PageView",
                   "type": 1,
                 });
               },
-              child: const Text('Dialog_1_')),
+              child: const Text('PageView_Demo')),
+
+          const SizedBox(
+            height: 10,
+          ),
+          ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, "/pageViewKeepAlive", arguments: {
+                  "title": "KeepAlive",
+                  "type": 1,
+                });
+              },
+              child: const Text('KeepAlive_Demo')),
         ],
       ),
     );

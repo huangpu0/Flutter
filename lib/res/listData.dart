@@ -3,7 +3,7 @@ List listData = [
   {
     'title': '文章标题1',
     'subtitle': '文章副标题1',
-    'image': 'images/load_1.png',
+    'image': 'images/load_1.jpeg',
   },
   {
     'title': '文章标题2',
@@ -33,7 +33,7 @@ List listData = [
   {
     'title': '文章标题7',
     'subtitle': '文章副标题7',
-    'image': 'images/load_1.png',
+    'image': 'images/load_1.jpeg',
   },
   {
     'title': '文章标题8',

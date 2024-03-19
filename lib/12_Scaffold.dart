@@ -36,7 +36,7 @@ class _MyScaffold0State extends State<MyScaffold0> {
                     decoration: BoxDecoration(
                       color: Colors.orange,
                       image: DecorationImage(
-                          image: AssetImage('images/load_1.png'),
+                          image: AssetImage('images/load_1.jpeg'),
                           fit: BoxFit.cover),
                     ),
                     child: Column(
