@@ -7,6 +7,7 @@ import 'package:flutter01/14_Navigator/14_Search.dart';
 import 'package:flutter01/15_Dialog.dart';
 import 'package:flutter01/16_PageView.dart';
 import 'package:flutter01/16_PageView/16_PageViewKeepAlive.dart';
+import 'package:flutter01/17_Key.dart';
 
 /// 1、配置路由
 final Map routes = {
@@ -17,6 +18,7 @@ final Map routes = {
   "/pageView": (context, {arguments}) => MyPageView0(arguments: arguments),
   "/pageViewKeepAlive": (context, {arguments}) =>
       MyPageViewKeepalive(arguments: arguments),
+  "/key": (context, {arguments}) => MyKey0(arguments: arguments),
 };
 
 /// 2、配置onGenerateRoute 固定写法

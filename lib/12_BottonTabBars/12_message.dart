@@ -46,6 +46,18 @@ class _MyMessage12State extends State<MyMessage12> {
                 });
               },
               child: const Text('KeepAlive_Demo')),
+
+          const SizedBox(
+            height: 10,
+          ),
+          ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, "/key", arguments: {
+                  "title": "Key",
+                  "type": 1,
+                });
+              },
+              child: const Text('Key_Demo')),
         ],
       ),
     );
