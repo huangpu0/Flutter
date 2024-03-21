@@ -58,6 +58,18 @@ class _MyMessage12State extends State<MyMessage12> {
                 });
               },
               child: const Text('Key_Demo')),
+
+          const SizedBox(
+            height: 10,
+          ),
+          ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, "/animatedList", arguments: {
+                  "title": "AnimatedList",
+                  "type": 1,
+                });
+              },
+              child: const Text('AnimatedList_Demo')),
         ],
       ),
     );

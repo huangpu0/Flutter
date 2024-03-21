@@ -161,8 +161,7 @@ class _MyDialog0State extends State<MyDialog0> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // ignore: unnecessary_string_interpolations
-        title: Text('${widget.arguments["title"].toString()}'),
+        title: Text(widget.arguments["title"].toString()),
       ),
       body: Center(
           child: Column(

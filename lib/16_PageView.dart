@@ -36,8 +36,7 @@ class _MyPageView0State extends State<MyPageView0> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // ignore: unnecessary_string_interpolations
-        title: Text('${widget.arguments["title"].toString()}'),
+        title: Text(widget.arguments["title"].toString()),
       ),
 
       /// 写法1
