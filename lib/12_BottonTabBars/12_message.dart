@@ -70,6 +70,30 @@ class _MyMessage12State extends State<MyMessage12> {
                 });
               },
               child: const Text('AnimatedList_Demo')),
+
+          const SizedBox(
+            height: 10,
+          ),
+          ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, "/animated", arguments: {
+                  "title": "Animated",
+                  "type": 1,
+                });
+              },
+              child: const Text('Animated_Demo')),
+
+          const SizedBox(
+            height: 10,
+          ),
+          ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, "/animatedHero", arguments: {
+                  "title": "AnimatedHero",
+                  "type": 1,
+                });
+              },
+              child: const Text('Animated_Hero')),
         ],
       ),
     );
