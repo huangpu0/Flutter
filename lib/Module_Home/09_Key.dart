@@ -17,15 +17,15 @@ import 'package:flutter/material.dart';
  GlobalKey（全局key），GlobalObjectKey（全局Objec key，和ObjectKey有点类似）
  */
 
-class MyKey0 extends StatefulWidget {
+class MyKey extends StatefulWidget {
   final Map arguments;
-  const MyKey0({Key? key, required this.arguments}) : super(key: key);
+  const MyKey({Key? key, required this.arguments}) : super(key: key);
 
   @override
-  State<MyKey0> createState() => _MyKey0State();
+  State<MyKey> createState() => _MyKeyState();
 }
 
-class _MyKey0State extends State<MyKey0> {
+class _MyKeyState extends State<MyKey> {
   /// GlobalKey
   final GlobalKey _globalKey1 = GlobalKey();
   final GlobalKey _globalKey2 = GlobalKey();
@@ -44,7 +44,6 @@ class _MyKey0State extends State<MyKey0> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     list = [
       MyBox(key: _globalKey1, color: Colors.red),
@@ -89,7 +88,7 @@ class _MyKey0State extends State<MyKey0> {
             });
           }),
       appBar: AppBar(
-        title: Text(widget.arguments["title"].toString()),
+        title: Text(widget.arguments["title"]),
       ),
       // 1、Key 简单实用
       // body: Center(

@@ -1,17 +1,16 @@
 // ignore_for_file: non_constant_identifier_names
 import 'package:flutter/material.dart';
-import './15_Dialog/15_MyDialog.dart';
 
 /// 命名路由传值
-class MyDialog0 extends StatefulWidget {
+class MyDialog extends StatefulWidget {
   final Map arguments;
-  const MyDialog0({super.key, required this.arguments});
+  const MyDialog({super.key, required this.arguments});
 
   @override
-  State<MyDialog0> createState() => _MyDialog0State();
+  State<MyDialog> createState() => _MyDialogState();
 }
 
-class _MyDialog0State extends State<MyDialog0> {
+class _MyDialogState extends State<MyDialog> {
   // ignore: unused_element
   void _altertDialog() async {
     var result = await showDialog(
@@ -161,7 +160,7 @@ class _MyDialog0State extends State<MyDialog0> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.arguments["title"].toString()),
+        title: Text(widget.arguments["title"]),
       ),
       body: Center(
           child: Column(
@@ -200,6 +199,67 @@ class _MyDialog0State extends State<MyDialog0> {
           ),
         ],
       )),
+    );
+  }
+}
+
+// ignore: camel_case_types
+class MyDialog_0 extends Dialog {
+  final String title;
+  final String content;
+  final Function()? onTap;
+  const MyDialog_0(
+      {required this.title,
+      required this.content,
+      required this.onTap,
+      super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      /// 背景透明效果
+      type: MaterialType.transparency,
+
+      /// 主要要包裹一个组件、避免全屏
+      child: Center(
+        child: Container(
+            width: 300,
+            height: 300,
+            color: Colors.white,
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: Stack(
+                    children: [
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(title),
+                      ),
+                      Align(
+                        alignment: Alignment.centerRight,
+                        child: InkWell(
+                          onTap: onTap,
+                          child: const Icon(Icons.close),
+                          // onTap: () {
+                          //   // ignore: avoid_print
+                          //   print('X');
+                          //   Navigator.of(context).pop('X 点击关闭');
+                          // },
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                const Divider(),
+                Container(
+                  padding: const EdgeInsets.all(10),
+                  width: double.infinity,
+                  child: Text(content),
+                )
+              ],
+            )),
+      ),
     );
   }
 }

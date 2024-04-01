@@ -1,27 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:flutter01/12_BottonTabBars/12_home.dart';
-import 'package:flutter01/12_BottonTabBars/12_me.dart';
 import 'package:flutter01/12_BottonTabBars/12_message.dart';
+import 'package:flutter01/Module_Me/MePage.dart';
 
-class MyScaffold0 extends StatefulWidget {
-  const MyScaffold0({super.key});
+class MyScaffold extends StatefulWidget {
+  final Map arguments;
+  const MyScaffold({super.key, required this.arguments});
 
   @override
-  State<MyScaffold0> createState() => _MyScaffold0State();
+  State<MyScaffold> createState() => _MyScaffoldState();
 }
 
-class _MyScaffold0State extends State<MyScaffold0> {
+class _MyScaffoldState extends State<MyScaffold> {
   /// 当前选中位置
   int currentPath = 0;
 
   /// tabs 页面
-  List<Widget> tabBars = const [MyHome12(), MyMessage12(), MyMe12()];
+  List<Widget> tabBars = const [MyHome12(), MyMessage12(), MePage()];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('你好Flutter'),
+        title: Text(widget.arguments["title"]),
       ),
 
       /// 侧边栏

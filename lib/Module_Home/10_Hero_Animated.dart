@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
-import '../res/listData.dart';
+import '../DataSource/listData.dart';
 
-class MyAnimatedHero0 extends StatefulWidget {
+class MyAnimatedHero extends StatefulWidget {
   final Map arguments;
-  const MyAnimatedHero0({super.key, required this.arguments});
+  const MyAnimatedHero({super.key, required this.arguments});
 
   @override
-  State<MyAnimatedHero0> createState() => _MyAnimatedHero0State();
+  State<MyAnimatedHero> createState() => _MyAnimatedHeroState();
 }
 
-class _MyAnimatedHero0State extends State<MyAnimatedHero0> {
+class _MyAnimatedHeroState extends State<MyAnimatedHero> {
   List<Widget> _getListData() {
     var tmpList = listData.map((e) {
       return GestureDetector(
         onTap: () {
-          Navigator.pushNamed(context, '/hero', arguments: {
+          Navigator.pushNamed(context, '/home_Ani_MyHero', arguments: {
             'image': e['image'],
           });
         },
@@ -68,15 +68,15 @@ class _MyAnimatedHero0State extends State<MyAnimatedHero0> {
 }
 
 // MyHero0
-class MyHero0 extends StatefulWidget {
+class MyHero extends StatefulWidget {
   final Map arguments;
-  const MyHero0({super.key, required this.arguments});
+  const MyHero({super.key, required this.arguments});
 
   @override
-  State<MyHero0> createState() => _MyHero0State();
+  State<MyHero> createState() => _MyHeroState();
 }
 
-class _MyHero0State extends State<MyHero0> {
+class _MyHeroState extends State<MyHero> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(

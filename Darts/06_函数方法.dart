@@ -1,4 +1,3 @@
-
 import 'libs/TsPerson.dart';
 
 void main(List<String> args) {
@@ -41,14 +40,12 @@ void main(List<String> args) {
 
   var w1 = new Web111('', 5);
   print(w1.test);
-
-
 }
- 
- // 泛型方法
- T getdata<T>( T value) {
+
+// 泛型方法
+T getdata<T>(T value) {
   return value;
- }
+}
 
 // int 返回值
 int get_Number() {
@@ -66,7 +63,6 @@ String out_data(String s1, [int n1 = 0]) {
 
 // 自定义对象
 class Person {
-
   // String name = 'name';
   // int age = 0;
 
@@ -75,13 +71,13 @@ class Person {
   }
 
   // 默认构造函数
-  String kk='';
-  int hh=0;
+  String kk = '';
+  int hh = 0;
   Person(String kk, int hh) {
     this.kk = kk;
     this.hh = hh;
   }
+
   /// 简写
   //Person(this.kk, this.hh);
-
 }

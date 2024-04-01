@@ -1,28 +1,47 @@
 import 'package:flutter/material.dart';
-import 'package:flutter01/res/listData.dart';
+import 'package:flutter01/DataSource/listData.dart';
 
-class MyAspectRation0 extends StatelessWidget {
-  const MyAspectRation0({super.key});
+class MyAspectRation0 extends StatefulWidget {
+  final Map arguments;
+  const MyAspectRation0({super.key, required this.arguments});
 
-  /// 显示一个容器、宽度是屏幕宽度、高度时宽度一半
+  @override
+  State<MyAspectRation0> createState() => _MyAspectRation0State();
+}
+
+class _MyAspectRation0State extends State<MyAspectRation0> {
   @override
   Widget build(BuildContext context) {
-    return AspectRatio(
-      aspectRatio: 2 / 1,
-      child: Container(
-        color: Colors.red,
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.arguments["title"]),
+      ),
+      body: AspectRatio(
+        aspectRatio: 2 / 1,
+        child: Container(
+          color: Colors.red,
+        ),
       ),
     );
   }
 }
 
-class MyAspectRation1 extends StatelessWidget {
-  const MyAspectRation1({super.key});
+class MyAspectRation1 extends StatefulWidget {
+  final Map arguments;
+  const MyAspectRation1({super.key, required this.arguments});
 
-  /// 显示一个容器、宽度是屏幕宽度、高度时宽度一半
+  @override
+  State<MyAspectRation1> createState() => _MyAspectRation1State();
+}
+
+class _MyAspectRation1State extends State<MyAspectRation1> {
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.arguments["title"]),
+      ),
+      body: ListView.builder(
         itemCount: 20,
         itemBuilder: (context, index) {
           return Card(
@@ -61,13 +80,21 @@ class MyAspectRation1 extends StatelessWidget {
               ],
             ),
           );
-        });
+        },
+      ),
+    );
   }
 }
 
-class MyAspectRation2 extends StatelessWidget {
-  const MyAspectRation2({super.key});
+class MyAspectRation2 extends StatefulWidget {
+  final Map arguments;
+  const MyAspectRation2({super.key, required this.arguments});
 
+  @override
+  State<MyAspectRation2> createState() => _MyAspectRation2State();
+}
+
+class _MyAspectRation2State extends State<MyAspectRation2> {
   List<Widget> initCardData() {
     var tmpList = listData.map((e) {
       return Card(
@@ -104,11 +131,15 @@ class MyAspectRation2 extends StatelessWidget {
     return tmpList.toList();
   }
 
-  /// 显示一个容器、宽度是屏幕宽度、高度时宽度一半
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: initCardData(),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.arguments["title"]),
+      ),
+      body: ListView(
+        children: initCardData(),
+      ),
     );
   }
 }

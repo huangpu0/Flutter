@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:flutter01/16_PageView/16_CycleAdImage.dart';
 
 class CycleAdView extends StatefulWidget {
   final double width;
@@ -25,7 +24,6 @@ class _CycleAdViewState extends State<CycleAdView> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
 
     /// 数据源
@@ -50,7 +48,6 @@ class _CycleAdViewState extends State<CycleAdView> {
   /// 页面销毁使用
   @override
   void dispose() {
-    // TODO: implement dispose
     super.dispose();
     _timer.cancel();
     _pageController.dispose();
@@ -93,6 +90,29 @@ class _CycleAdViewState extends State<CycleAdView> {
               }).toList(),
             ))
       ],
+    );
+  }
+}
+
+class CycleAdImage extends StatelessWidget {
+  final double width;
+  final double height;
+  final String asset;
+  const CycleAdImage(
+      {super.key,
+      this.width = double.infinity,
+      this.height = 200,
+      required this.asset});
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: width,
+      height: height,
+      child: Image.asset(
+        asset,
+        fit: BoxFit.cover,
+      ),
     );
   }
 }

@@ -1,15 +1,15 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 
-class MyAnimatedList0 extends StatefulWidget {
+class MyAnimatedList extends StatefulWidget {
   final Map arguments;
-  const MyAnimatedList0({super.key, required this.arguments});
+  const MyAnimatedList({super.key, required this.arguments});
 
   @override
-  State<MyAnimatedList0> createState() => _MyAnimatedList0State();
+  State<MyAnimatedList> createState() => _MyAnimatedListState();
 }
 
-class _MyAnimatedList0State extends State<MyAnimatedList0> {
+class _MyAnimatedListState extends State<MyAnimatedList> {
   // ignore: non_constant_identifier_names
   final al_globalKey = GlobalKey<AnimatedListState>();
   bool flag = true;

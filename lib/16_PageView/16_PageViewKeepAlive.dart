@@ -16,7 +16,7 @@ class _MyPageViewKeepaliveState extends State<MyPageViewKeepalive> {
     return Scaffold(
         appBar: AppBar(
           // ignore: unnecessary_string_interpolations
-          title: Text('${widget.arguments["title"].toString()}'),
+          title: Text(widget.arguments["title"]),
         ),
         body: PageView.builder(
             itemCount: 10,

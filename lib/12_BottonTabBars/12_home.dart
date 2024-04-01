@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter01/12_BottonTabBars/12_me.dart';
 import 'package:flutter01/12_BottonTabBars/12_message.dart';
+import 'package:flutter01/Module_Me/MePage.dart';
 
 class MyHome12 extends StatefulWidget {
   const MyHome12({super.key});
@@ -33,7 +33,7 @@ class _MyHome12State extends State<MyHome12>
   int currentPath = 0;
 
   /// tabs 页面
-  List<Widget> tabBars = const [MyMessage12(), MyMe12()];
+  List<Widget> tabBars = const [MyMessage12(), MePage()];
 
   @override
   Widget build(BuildContext context) {

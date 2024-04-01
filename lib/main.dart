@@ -1,37 +1,110 @@
 import 'package:flutter/material.dart';
-import 'package:flutter01/01_Container_Text.dart';
-import 'package:flutter01/02_Image.dart';
-import 'package:flutter01/03_Icon.dart';
-import 'package:flutter01/04_ListView.dart';
-import 'package:flutter01/05_GridView.dart';
-import 'package:flutter01/06_Padding.dart';
-import 'package:flutter01/07_Stack.dart';
-import 'package:flutter01/08_AspectRation.dart';
-import 'package:flutter01/09_Button.dart';
-import 'package:flutter01/10_Wrap.dart';
-import 'package:flutter01/11_StatefulWidget.dart';
-import 'package:flutter01/12_Scaffold.dart';
-import 'package:flutter01/13_AppBar.dart';
-import 'package:flutter01/14_Navigator.dart';
+import 'Routors/Routers.dart';
+import 'package:flutter01/Module_Me/MePage.dart';
+import 'package:flutter01/Module_Home/HomePage.dart';
+import 'package:flutter01/Module_Message/MessagePage.dart';
 
 void main() {
-  // runApp(MaterialApp(
-  //   theme: ThemeData(
-  //     primarySwatch: Colors.blue,
-  //   ),
-  //   // home: Scaffold(
-  //   //   appBar: AppBar(
-  //   //     title: const Text('你好Flutter'),
-  //   //   ),
-  //   //   body: const MyFloatingActionButton0(),
-  //   // ),
-  //   /// 12_13_Scaffold 自定义底部导航条 + 类似咸鱼底部凸起按钮 + 侧边栏 + AppBar
-  //   home: const MyScaffold0(),
-  // ));
-
-  /// 14_Navigator
-  runApp(const MyNavigator0());
+  runApp(const MainTabBar());
 }
+
+// Module入口
+class MainTabBar extends StatelessWidget {
+  const MainTabBar({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      initialRoute: "/main",
+      // 命名路由
+      //routes: {
+      //   "/": (context) => const MyScaffold0(),
+      //   "/news": (context) => NewsPage0(
+      //         arguments: routes,
+      //       ),
+      //   "/search": (context) => const SearchPage0(title: "SearchPage"),
+      // },
+      onGenerateRoute: onGenerateRoute,
+    );
+  }
+}
+
+// 主要Module入口
+class MainModule extends StatefulWidget {
+  const MainModule({super.key});
+  @override
+  State<MainModule> createState() => _MainModuleState();
+}
+
+class _MainModuleState extends State<MainModule> {
+  /// 当前选中位置
+  int currentPath = 0;
+
+  /// tabs 页面
+  List<Widget> tabBars = const [HomePage(), MessagePage(), MePage()];
+
+  List<BottomNavigationBarItem> modules() {
+    List<Icon> icons = const [
+      Icon(Icons.home),
+      Icon(Icons.message),
+      Icon(Icons.face)
+    ];
+    List<String> names = const ['首页', '消息', '我的'];
+
+    List<BottomNavigationBarItem> tmpList = [];
+    for (var i = 0; i < names.length; i++) {
+      tmpList.add(BottomNavigationBarItem(icon: icons[i], label: names[i]));
+    }
+    return tmpList;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: tabBars[currentPath],
+
+      /// 自定义底部导航条
+      bottomNavigationBar: BottomNavigationBar(
+          currentIndex: currentPath,
+          unselectedIconTheme: const IconThemeData(color: Colors.black38),
+          unselectedItemColor: Colors.black38,
+          selectedIconTheme: const IconThemeData(color: Colors.blue),
+          selectedItemColor: Colors.blue,
+          onTap: (value) {
+            setState(() {
+              currentPath = value;
+            });
+          },
+          items: modules()),
+
+      /// FloatingActionButton 类似咸鱼底部凸起按钮
+      floatingActionButton: Container(
+        width: 60,
+        height: 60,
+        padding: const EdgeInsets.all(5),
+
+        /// 调整FloatingActionButton位置
+        margin: const EdgeInsets.only(top: 5),
+        decoration: BoxDecoration(
+            color: Colors.white, borderRadius: BorderRadius.circular(30)),
+        child: FloatingActionButton(
+            backgroundColor: currentPath == 1 ? Colors.red : Colors.blue,
+            child: const Icon(Icons.add),
+            onPressed: () {
+              setState(() {
+                currentPath = 1;
+              });
+            }),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+    );
+  }
+}
+
+
 
 /// 01_Container_Text
 /// MyApp(), MyButton(), MyText()

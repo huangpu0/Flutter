@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter01/12_BottonTabBars/12_home.dart';
-import 'package:flutter01/12_BottonTabBars/12_me.dart';
 import 'package:flutter01/12_BottonTabBars/12_message.dart';
+import 'package:flutter01/Module_Me/MePage.dart';
 
-class MyAppBar0 extends StatefulWidget {
-  const MyAppBar0({super.key});
+class MyAppBar extends StatefulWidget {
+  final Map arguments;
+  const MyAppBar({super.key, required this.arguments});
 
   @override
-  State<MyAppBar0> createState() => _MyAppBar0State();
+  State<MyAppBar> createState() => _MyAppBarState();
 }
 
-class _MyAppBar0State extends State<MyAppBar0>
+class _MyAppBarState extends State<MyAppBar>
     with SingleTickerProviderStateMixin {
   late TabController tabController;
 
@@ -25,7 +26,7 @@ class _MyAppBar0State extends State<MyAppBar0>
   int currentPath = 0;
 
   /// tabs 页面
-  List<Widget> tabBars = const [MyHome12(), MyMessage12(), MyMe12()];
+  List<Widget> tabBars = const [MyHome12(), MyMessage12(), MePage()];
 
   @override
   Widget build(BuildContext context) {
@@ -33,11 +34,10 @@ class _MyAppBar0State extends State<MyAppBar0>
       appBar: AppBar(
         leading: IconButton(
             onPressed: () {
-              // ignore: avoid_print
-              print('左侧按钮图标');
+              Navigator.pop(context);
             },
             icon: const Icon(Icons.arrow_back)),
-        title: const Text('Flutter App'),
+        title: Text(widget.arguments["title"]),
         backgroundColor: Colors.blue,
         actions: [
           IconButton(
