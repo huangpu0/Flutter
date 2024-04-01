@@ -5,8 +5,8 @@ enum RoutersEnum {
   image,
   icon,
   button,
-  appbar,
   scaffold,
+  appbar,
   dialog,
   key,
   animated,
@@ -38,10 +38,10 @@ String routerName(RoutersEnum routersEnum) {
       return '/home_Icon';
     case RoutersEnum.button:
       return '/home_Button';
-    case RoutersEnum.appbar:
-      return '/home_AppBar';
     case RoutersEnum.scaffold:
       return '/home_Scaffold';
+    case RoutersEnum.appbar:
+      return '/home_AppBar';
     case RoutersEnum.dialog:
       return '/home_Dialog';
     case RoutersEnum.key:
@@ -91,10 +91,10 @@ String routerTitle(RoutersEnum routersEnum) {
       return 'Icon';
     case RoutersEnum.button:
       return 'Button';
-    case RoutersEnum.appbar:
-      return 'AppBar';
     case RoutersEnum.scaffold:
       return 'Scaffold';
+    case RoutersEnum.appbar:
+      return 'AppBar';
     case RoutersEnum.dialog:
       return 'Dialog';
     case RoutersEnum.key:
