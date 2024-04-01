@@ -11,6 +11,8 @@ enum RoutersEnum {
   key,
   animated,
   listView,
+  gridView,
+  pageView,
   // MePage
   padding,
   row,
@@ -50,6 +52,10 @@ String routerName(RoutersEnum routersEnum) {
       return '/home_Animated';
     case RoutersEnum.listView:
       return '/home_ListView';
+    case RoutersEnum.gridView:
+      return '/home_GridView';
+    case RoutersEnum.pageView:
+      return '/home_PageView';
     // MePage
     case RoutersEnum.padding:
       return '/me_Padding';
@@ -103,6 +109,10 @@ String routerTitle(RoutersEnum routersEnum) {
       return 'Animated';
     case RoutersEnum.listView:
       return 'ListView';
+    case RoutersEnum.gridView:
+      return 'GridView';
+    case RoutersEnum.pageView:
+      return 'PageView';
     // MePage
     case RoutersEnum.padding:
       return 'Padding';

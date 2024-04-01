@@ -67,20 +67,13 @@ class _MyAnimatedState extends State<MyAnimated> {
           var anitype = e['type'];
           switch (anitype) {
             case 11:
-              Navigator.pushNamed(context, '/home_Ani_List', arguments: {
-                'title': e['title'],
-              });
+              Navigator.pushNamed(context, '/home_Ani_List', arguments: e);
               break;
             case 12:
-              Navigator.pushNamed(context, '/home_Ani_Hero', arguments: {
-                'title': e['title'],
-              });
+              Navigator.pushNamed(context, '/home_Ani_Hero', arguments: e);
               break;
             default:
-              Navigator.pushNamed(context, '/home_Ani_show', arguments: {
-                'title': e['title'],
-                'type': e['type'],
-              });
+              Navigator.pushNamed(context, '/home_Ani_show', arguments: e);
           }
         },
         child: HomePageItem(

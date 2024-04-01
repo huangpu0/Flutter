@@ -22,6 +22,9 @@ class _HomePageState extends State<HomePage> {
       RoutersEnum.dialog,
       RoutersEnum.key,
       RoutersEnum.animated,
+      RoutersEnum.listView,
+      RoutersEnum.gridView,
+      RoutersEnum.pageView,
     ];
     Iterable<Widget> wlist = dataSource.map((e) {
       return GestureDetector(

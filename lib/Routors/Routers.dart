@@ -14,6 +14,9 @@ import 'package:flutter01/Module_Home/10_Animated.dart';
 import 'package:flutter01/Module_Home/10_List_Animated.dart';
 import 'package:flutter01/Module_Home/10_Hero_Animated.dart';
 import 'package:flutter01/Module_Home/21_ListView.dart';
+import 'package:flutter01/Module_Home/22_GridView.dart';
+import 'package:flutter01/Module_Home/23_PageView.dart';
+import 'package:flutter01/23_PageView/23_PageViewKeepAlive.dart';
 // MePage
 import 'package:flutter01/Module_Me/01_Padding.dart';
 import 'package:flutter01/Module_Me/02_Row_Column.dart';
@@ -43,15 +46,18 @@ final Map routes = {
       MyAnimatedList(arguments: arguments),
   '/home_Ani_Hero': (context, {arguments}) =>
       MyAnimatedHero(arguments: arguments),
-  "/home_Ani_MyHero": (context, {arguments}) => MyHero(arguments: arguments),
-
-  '/home_ListView': (context, {arguments}) => MyListView0(arguments: arguments),
-  '/home_ListView0': (context, {arguments}) =>
+  '/home_Ani_MyHero': (context, {arguments}) => MyHero(arguments: arguments),
+  '/home_ListView': (context, {arguments}) => MyListView(arguments: arguments),
+  '/home_ListView_Show': (context, {arguments}) =>
       MyListView0(arguments: arguments),
-  '/home_ListView1': (context, {arguments}) =>
-      MyListView1(arguments: arguments),
-  '/home_ListView2': (context, {arguments}) =>
-      MyListView2(arguments: arguments),
+  '/home_GridView': (context, {arguments}) => MyGridView(arguments: arguments),
+  '/home_GridView_Show': (context, {arguments}) =>
+      MyGridView0(arguments: arguments),
+  '/home_PageView': (context, {arguments}) => MyPageView(arguments: arguments),
+  '/home_PageView_Show': (context, {arguments}) =>
+      MyPageView0(arguments: arguments),
+  '/home_PageView_KeepAlive': (context, {arguments}) =>
+      MyPageViewKeepalive(arguments: arguments),
 
   // MePage
   '/me_Padding': (context, {arguments}) => MyPadding(arguments: arguments),

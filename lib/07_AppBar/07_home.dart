@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter01/12_BottonTabBars/12_me.dart';
-import 'package:flutter01/12_BottonTabBars/12_message.dart';
 
 class MyHome12 extends StatefulWidget {
   const MyHome12({super.key});
