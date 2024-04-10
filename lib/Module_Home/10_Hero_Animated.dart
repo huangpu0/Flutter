@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../DataSource/listData.dart';
+import 'package:photo_view/photo_view_gallery.dart';
 
 class MyAnimatedHero extends StatefulWidget {
   final Map arguments;
@@ -15,7 +16,9 @@ class _MyAnimatedHeroState extends State<MyAnimatedHero> {
       return GestureDetector(
         onTap: () {
           Navigator.pushNamed(context, '/home_Ani_MyHero', arguments: {
+            'id': e['id'],
             'image': e['image'],
+            'data': listData,
           });
         },
         child: Container(
@@ -77,6 +80,14 @@ class MyHero extends StatefulWidget {
 }
 
 class _MyHeroState extends State<MyHero> {
+  late int currentIndex = 0;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    currentIndex = widget.arguments['id'];
+  }
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -85,16 +96,45 @@ class _MyHeroState extends State<MyHero> {
         },
         child: Hero(
           tag: widget.arguments["image"],
-          child: Scaffold(
-            backgroundColor: Colors.black,
-            body: Center(
-              child: AspectRatio(
-                aspectRatio: 1,
-                child: Image.asset(
-                  widget.arguments["image"],
+          child: Stack(
+            children: [
+              Scaffold(
+                backgroundColor: Colors.black,
+                body: Center(
+                  child: PhotoViewGallery.builder(
+                      itemCount: widget.arguments['data'].length,
+                      pageController: PageController(
+                          initialPage: widget.arguments['id'] - 1),
+                      onPageChanged: (index) {
+                        setState(() {
+                          currentIndex = index + 1;
+                        });
+                      },
+                      builder: (context, index) {
+                        return PhotoViewGalleryPageOptions(
+                          imageProvider: AssetImage(
+                              widget.arguments['data'][index]['image']),
+                        );
+                      }),
                 ),
               ),
-            ),
+              Positioned(
+                left: 0,
+                right: 0,
+                bottom: 30,
+                child: Container(
+                  alignment: Alignment.center,
+                  child: Text(
+                    '$currentIndex/${widget.arguments['data'].length}',
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 17,
+                      decoration: TextDecoration.none,
+                    ),
+                  ),
+                ),
+              ),
+            ],
           ),
         ));
   }
