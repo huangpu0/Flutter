@@ -1,5 +1,6 @@
 // ignore_for_file: non_constant_identifier_names
 import 'package:flutter/material.dart';
+//import 'package:fluttertoast/fluttertoast.dart';
 
 /// 命名路由传值
 class MyDialog extends StatefulWidget {
@@ -133,7 +134,12 @@ class _MyDialogState extends State<MyDialog> {
   }
 
   // ignore: unused_element
-  void _toast() {}
+  void _fluttertoast() {
+    // Fluttertoast.showToast(
+    //     msg: '我是fluttertoast',
+    //     backgroundColor: Colors.black54,
+    //     textColor: Colors.white);
+  }
 
   // ignore: unused_element
   void _MyDialog_0() async {
@@ -197,6 +203,11 @@ class _MyDialogState extends State<MyDialog> {
           const SizedBox(
             height: 10,
           ),
+          ElevatedButton(
+              onPressed: () {
+                _fluttertoast();
+              },
+              child: const Text('我是第三方fluttertoast')),
         ],
       )),
     );
