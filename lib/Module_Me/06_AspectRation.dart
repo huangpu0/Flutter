@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter01/DataSource/listData.dart';
+import 'package:get/get.dart';
 
 class MyAspectRation0 extends StatefulWidget {
-  final Map arguments;
-  const MyAspectRation0({super.key, required this.arguments});
+  // 1、原生路由接收数据
+  // final Map arguments;
+  // const MyAspectRation0({super.key, required this.arguments});
+  // 2、Get方式路由 不需要 arguments 参数、可通过 Get.arguments 获取参数
+  const MyAspectRation0({
+    super.key,
+  });
 
   @override
   State<MyAspectRation0> createState() => _MyAspectRation0State();
@@ -14,7 +20,10 @@ class _MyAspectRation0State extends State<MyAspectRation0> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.arguments["title"]),
+        // 1、原生路由接收数据
+        //title: Text(widget.arguments["title"]),
+        // 2、Get方式路由跳转接收数据
+        title: Text(Get.arguments['title']),
       ),
       body: AspectRatio(
         aspectRatio: 2 / 1,
@@ -27,8 +36,13 @@ class _MyAspectRation0State extends State<MyAspectRation0> {
 }
 
 class MyAspectRation1 extends StatefulWidget {
-  final Map arguments;
-  const MyAspectRation1({super.key, required this.arguments});
+  // 1、原生路由接收数据
+  // final Map arguments;
+  // const MyAspectRation1({super.key, required this.arguments});
+  // 2、Get方式路由 不需要 arguments 参数、可通过 Get.arguments 获取参数
+  const MyAspectRation1({
+    super.key,
+  });
 
   @override
   State<MyAspectRation1> createState() => _MyAspectRation1State();
@@ -39,7 +53,10 @@ class _MyAspectRation1State extends State<MyAspectRation1> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.arguments["title"]),
+        // 1、原生路由接收数据
+        //title: Text(widget.arguments["title"]),
+        // 2、Get方式路由跳转接收数据
+        title: Text(Get.arguments['title']),
       ),
       body: ListView.builder(
         itemCount: 20,
@@ -87,8 +104,13 @@ class _MyAspectRation1State extends State<MyAspectRation1> {
 }
 
 class MyAspectRation2 extends StatefulWidget {
-  final Map arguments;
-  const MyAspectRation2({super.key, required this.arguments});
+  // 1、原生路由接收数据
+  // final Map arguments;
+  // const MyAspectRation2({super.key, required this.arguments});
+  // 2、Get方式路由 不需要 arguments 参数、可通过 Get.arguments 获取参数
+  const MyAspectRation2({
+    super.key,
+  });
 
   @override
   State<MyAspectRation2> createState() => _MyAspectRation2State();
@@ -135,7 +157,10 @@ class _MyAspectRation2State extends State<MyAspectRation2> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.arguments["title"]),
+        // 1、原生路由接收数据
+        //title: Text(widget.arguments["title"]),
+        // 2、Get方式路由跳转接收数据
+        title: Text(Get.arguments['title']),
       ),
       body: ListView(
         children: initCardData(),

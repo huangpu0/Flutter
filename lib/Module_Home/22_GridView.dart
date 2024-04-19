@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter01/DataSource/listData.dart';
 import 'package:flutter01/Module_Home/HomePageItem.dart';
+import 'package:get/get.dart';
 
 class MyGridView extends StatefulWidget {
-  final Map arguments;
-  const MyGridView({super.key, required this.arguments});
+  // 1、原生路由接收数据
+  // final Map arguments;
+  // const MyGridView({super.key, required this.arguments});
+  // 2、Get方式路由 不需要 arguments 参数、可通过 Get.arguments 获取参数
+  const MyGridView({
+    super.key,
+  });
 
   @override
   State<MyGridView> createState() => _MyGridViewState();
@@ -44,7 +50,10 @@ class _MyGridViewState extends State<MyGridView> {
     final screenSize = MediaQuery.of(context).size;
     return Scaffold(
         appBar: AppBar(
-          title: Text(widget.arguments["title"]),
+          // 1、原生路由接收数据
+          //title: Text(widget.arguments["title"]),
+          // 2、Get方式路由跳转接收数据
+          title: Text(Get.arguments['title']),
         ),
         body: GridView.count(
           scrollDirection: Axis.vertical,
@@ -57,8 +66,13 @@ class _MyGridViewState extends State<MyGridView> {
 }
 
 class MyGridView0 extends StatefulWidget {
-  final Map arguments;
-  const MyGridView0({super.key, required this.arguments});
+  // 1、原生路由接收数据
+  // final Map arguments;
+  // const MyGridView0({super.key, required this.arguments});
+  // 2、Get方式路由 不需要 arguments 参数、可通过 Get.arguments 获取参数
+  const MyGridView0({
+    super.key,
+  });
 
   @override
   State<MyGridView0> createState() => _MyGridView0State();
@@ -67,7 +81,7 @@ class MyGridView0 extends StatefulWidget {
 class _MyGridView0State extends State<MyGridView0> {
   // 展示Liew类型
   Widget showGridViewWidget() {
-    var sType = widget.arguments['type'] as int;
+    var sType = Get.arguments['type'] as int;
     switch (sType) {
       case 1:
         // 1、GridView(count形式动态加载)
@@ -188,7 +202,10 @@ class _MyGridView0State extends State<MyGridView0> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.arguments["title"]),
+        // 1、原生路由接收数据
+        //title: Text(widget.arguments["title"]),
+        // 2、Get方式路由跳转接收数据
+        title: Text(Get.arguments['title']),
       ),
       body: showGridViewWidget(),
     );

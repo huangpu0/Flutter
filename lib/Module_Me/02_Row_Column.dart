@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 // 水平、垂直布局
 class MyRow extends StatefulWidget {
-  final Map arguments;
-  const MyRow({super.key, required this.arguments});
+  // 1、原生路由接收数据
+  // final Map arguments;
+  // const MyRow({super.key, required this.arguments});
+  // 2、Get方式路由 不需要 arguments 参数、可通过 Get.arguments 获取参数
+  const MyRow({
+    super.key,
+  });
 
   @override
   State<MyRow> createState() => _MyRowState();
@@ -14,7 +20,10 @@ class _MyRowState extends State<MyRow> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.arguments["title"]),
+        // 1、原生路由接收数据
+        //title: Text(widget.arguments["title"]),
+        // 2、Get方式路由跳转接收数据
+        title: Text(Get.arguments['title']),
       ),
       body: Container(
         width: 400,
@@ -42,8 +51,13 @@ class _MyRowState extends State<MyRow> {
 }
 
 class MyColumn extends StatefulWidget {
-  final Map arguments;
-  const MyColumn({super.key, required this.arguments});
+  // 1、原生路由接收数据
+  // final Map arguments;
+  // const MyMyColumn({super.key, required this.arguments});
+  // 2、Get方式路由 不需要 arguments 参数、可通过 Get.arguments 获取参数
+  const MyColumn({
+    super.key,
+  });
 
   @override
   State<MyColumn> createState() => _MyColumnState();
@@ -54,7 +68,10 @@ class _MyColumnState extends State<MyColumn> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.arguments["title"]),
+        // 1、原生路由接收数据
+        //title: Text(widget.arguments["title"]),
+        // 2、Get方式路由跳转接收数据
+        title: Text(Get.arguments['title']),
       ),
       body: Container(
         width: 400,

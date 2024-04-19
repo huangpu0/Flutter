@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter01/Module_Home/HomePageItem.dart';
+import 'package:get/get.dart';
 import '../DataSource/listData.dart';
 
 class MyListView extends StatefulWidget {
-  final Map arguments;
-  const MyListView({super.key, required this.arguments});
+  // 1、原生路由接收数据
+  // final Map arguments;
+  // const MyListView({super.key, required this.arguments});
+  // 2、Get方式路由 不需要 arguments 参数、可通过 Get.arguments 获取参数
+  const MyListView({
+    super.key,
+  });
 
   @override
   State<MyListView> createState() => _MyListViewState();
@@ -44,7 +50,10 @@ class _MyListViewState extends State<MyListView> {
     final screenSize = MediaQuery.of(context).size;
     return Scaffold(
         appBar: AppBar(
-          title: Text(widget.arguments["title"]),
+          // 1、原生路由接收数据
+          //title: Text(widget.arguments["title"]),
+          // 2、Get方式路由跳转接收数据
+          title: Text(Get.arguments['title']),
         ),
         body: GridView.count(
           scrollDirection: Axis.vertical,
@@ -57,8 +66,13 @@ class _MyListViewState extends State<MyListView> {
 }
 
 class MyListView0 extends StatefulWidget {
-  final Map arguments;
-  const MyListView0({super.key, required this.arguments});
+  // 1、原生路由接收数据
+  // final Map arguments;
+  // const MyListView0({super.key, required this.arguments});
+  // 2、Get方式路由 不需要 arguments 参数、可通过 Get.arguments 获取参数
+  const MyListView0({
+    super.key,
+  });
 
   @override
   State<MyListView0> createState() => _MyListView0State();
@@ -67,7 +81,7 @@ class MyListView0 extends StatefulWidget {
 class _MyListView0State extends State<MyListView0> {
   // 展示Liew类型
   Widget showListViewWidget() {
-    var sType = widget.arguments['type'] as int;
+    var sType = Get.arguments['type'] as int;
     switch (sType) {
       case 1:
         // 1、ListView基本使用
@@ -207,7 +221,10 @@ class _MyListView0State extends State<MyListView0> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.arguments["title"]),
+        // 1、原生路由接收数据
+        //title: Text(widget.arguments["title"]),
+        // 2、Get方式路由跳转接收数据
+        title: Text(Get.arguments['title']),
       ),
       body: showListViewWidget(),
     );

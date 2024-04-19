@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter01/Module_Home/HomePageItem.dart';
 import 'package:flutter01/Routors/RoutersEnum.dart';
+import 'package:get/get.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -25,13 +26,20 @@ class _HomePageState extends State<HomePage> {
       RoutersEnum.listView,
       RoutersEnum.gridView,
       RoutersEnum.pageView,
+      RoutersEnum.get,
     ];
     Iterable<Widget> wlist = dataSource.map((e) {
       return GestureDetector(
         onTap: () {
-          Navigator.pushNamed(context, routerName(e), arguments: {
-            'title': routerTitle(e),
-          });
+          // 1、原生路由跳转
+          // Navigator.pushNamed(context, routerName(e), arguments: {
+          //   'title': routerTitle(e),
+          // });
+          // 2、Get方式路由跳转
+          Get.toNamed(
+            routerName(e),
+            arguments: {'title': routerTitle(e)},
+          );
         },
         child: HomePageItem(
           title: routerTitle(e),

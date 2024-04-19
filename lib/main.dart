@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+
+/// 使用Get库
+import 'package:get/get.dart';
 import 'Routors/Routers.dart';
 import 'package:flutter01/Module_Me/MePage.dart';
 import 'package:flutter01/Module_Home/HomePage.dart';
@@ -14,11 +17,10 @@ class MainTabBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: "/main",
       // 命名路由
       //routes: {
       //   "/": (context) => const MyScaffold0(),
@@ -27,7 +29,11 @@ class MainTabBar extends StatelessWidget {
       //       ),
       //   "/search": (context) => const SearchPage0(title: "SearchPage"),
       // },
-      onGenerateRoute: onGenerateRoute,
+      initialRoute: "/main",
+      // 1、原生配置路由方式
+      //onGenerateRoute: onGenerateRoute,
+      // 2、Get方式配置路由 不需要 arguments 参数、可通过 Get.arguments 获取参数
+      getPages: getPages,
     );
   }
 }

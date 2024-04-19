@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import '../DataSource/listData.dart';
 import 'package:photo_view/photo_view_gallery.dart';
 
 class MyAnimatedHero extends StatefulWidget {
-  final Map arguments;
-  const MyAnimatedHero({super.key, required this.arguments});
+  // 1、原生路由接收数据
+  // final Map arguments;
+  // const MyAnimatedHero({super.key, required this.arguments});
+  // 2、Get方式路由 不需要 arguments 参数、可通过 Get.arguments 获取参数
+  const MyAnimatedHero({
+    super.key,
+  });
 
   @override
   State<MyAnimatedHero> createState() => _MyAnimatedHeroState();
@@ -56,7 +62,10 @@ class _MyAnimatedHeroState extends State<MyAnimatedHero> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text(widget.arguments["title"].toString()),
+          // 1、原生路由接收数据
+          //title: Text(widget.arguments["title"]),
+          // 2、Get方式路由跳转接收数据
+          title: Text(Get.arguments['title']),
         ),
         body: GridView.count(
           // 水平垂直间距
@@ -72,8 +81,13 @@ class _MyAnimatedHeroState extends State<MyAnimatedHero> {
 
 // MyHero0
 class MyHero extends StatefulWidget {
-  final Map arguments;
-  const MyHero({super.key, required this.arguments});
+  // 1、原生路由接收数据
+  // final Map arguments;
+  // const MyHero({super.key, required this.arguments});
+  // 2、Get方式路由 不需要 arguments 参数、可通过 Get.arguments 获取参数
+  const MyHero({
+    super.key,
+  });
 
   @override
   State<MyHero> createState() => _MyHeroState();
@@ -85,7 +99,7 @@ class _MyHeroState extends State<MyHero> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    currentIndex = widget.arguments['id'];
+    currentIndex = Get.arguments['id'];
   }
 
   @override
@@ -95,16 +109,16 @@ class _MyHeroState extends State<MyHero> {
           Navigator.pop(context);
         },
         child: Hero(
-          tag: widget.arguments["image"],
+          tag: Get.arguments["image"],
           child: Stack(
             children: [
               Scaffold(
                 backgroundColor: Colors.black,
                 body: Center(
                   child: PhotoViewGallery.builder(
-                      itemCount: widget.arguments['data'].length,
-                      pageController: PageController(
-                          initialPage: widget.arguments['id'] - 1),
+                      itemCount: Get.arguments['data'].length,
+                      pageController:
+                          PageController(initialPage: Get.arguments['id'] - 1),
                       onPageChanged: (index) {
                         setState(() {
                           currentIndex = index + 1;
@@ -112,8 +126,8 @@ class _MyHeroState extends State<MyHero> {
                       },
                       builder: (context, index) {
                         return PhotoViewGalleryPageOptions(
-                          imageProvider: AssetImage(
-                              widget.arguments['data'][index]['image']),
+                          imageProvider:
+                              AssetImage(Get.arguments['data'][index]['image']),
                         );
                       }),
                 ),
@@ -125,7 +139,7 @@ class _MyHeroState extends State<MyHero> {
                 child: Container(
                   alignment: Alignment.center,
                   child: Text(
-                    '$currentIndex/${widget.arguments['data'].length}',
+                    '$currentIndex/${Get.arguments['data'].length}',
                     style: const TextStyle(
                       color: Colors.white,
                       fontSize: 17,

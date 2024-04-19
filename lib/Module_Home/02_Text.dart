@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class MyText extends StatefulWidget {
-  final Map arguments;
-  const MyText({super.key, required this.arguments});
+  // 1、原生路由接收数据
+  // final Map arguments;
+  // const MyText({super.key, required this.arguments});
+  // 2、Get方式路由 不需要 arguments 参数、可通过 Get.arguments 获取参数
+  const MyText({
+    super.key,
+  });
 
   @override
   State<MyText> createState() => _MyTextState();
@@ -13,7 +19,10 @@ class _MyTextState extends State<MyText> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.arguments["title"]),
+        // 1、原生路由接收数据
+        //title: Text(widget.arguments["title"]),
+        // 2、Get方式路由跳转接收数据
+        title: Text(Get.arguments['title']),
       ),
       body: Container(
         width: 200,

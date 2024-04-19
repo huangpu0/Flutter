@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 /*
 在Flutter中，Key是不能重复使用的，所以Key一般用来做唯一标识。组件在更新的时候，其状态的保
@@ -18,8 +19,13 @@ import 'package:flutter/material.dart';
  */
 
 class MyKey extends StatefulWidget {
-  final Map arguments;
-  const MyKey({Key? key, required this.arguments}) : super(key: key);
+  // 1、原生路由接收数据
+  // final Map arguments;
+  // const MyKey({Key? key, required this.arguments}) : super(key: key);
+  // 2、Get方式路由 不需要 arguments 参数、可通过 Get.arguments 获取参数
+  const MyKey({
+    Key? key,
+  }) : super(key: key);
 
   @override
   State<MyKey> createState() => _MyKeyState();
@@ -88,7 +94,10 @@ class _MyKeyState extends State<MyKey> {
             });
           }),
       appBar: AppBar(
-        title: Text(widget.arguments["title"]),
+        // 1、原生路由接收数据
+        //title: Text(widget.arguments["title"]),
+        // 2、Get方式路由跳转接收数据
+        title: Text(Get.arguments['title']),
       ),
       // 1、Key 简单实用
       // body: Center(

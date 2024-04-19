@@ -1,11 +1,17 @@
 // ignore_for_file: non_constant_identifier_names
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:get/get.dart';
 
 /// 命名路由传值
 class MyDialog extends StatefulWidget {
-  final Map arguments;
-  const MyDialog({super.key, required this.arguments});
+  // 1、原生路由接收数据
+  // final Map arguments;
+  // const MyDialog({super.key, required this.arguments});
+  // 2、Get方式路由 不需要 arguments 参数、可通过 Get.arguments 获取参数
+  const MyDialog({
+    super.key,
+  });
 
   @override
   State<MyDialog> createState() => _MyDialogState();
@@ -167,7 +173,10 @@ class _MyDialogState extends State<MyDialog> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.arguments["title"]),
+        // 1、原生路由接收数据
+        //title: Text(widget.arguments["title"]),
+        // 2、Get方式路由跳转接收数据
+        title: Text(Get.arguments['title']),
       ),
       body: Center(
           child: Column(

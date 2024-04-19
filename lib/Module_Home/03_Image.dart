@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter01/Module_Home/ModuleSubItem.dart';
+import 'package:get/get.dart';
 
 class MyImage extends StatefulWidget {
-  final Map arguments;
-  const MyImage({super.key, required this.arguments});
+  // 1、原生路由接收数据
+  // final Map arguments;
+  // const MyImage({super.key, required this.arguments});
+  // 2、Get方式路由 不需要 arguments 参数、可通过 Get.arguments 获取参数
+  const MyImage({
+    super.key,
+  });
 
   @override
   State<MyImage> createState() => _MyImageState();
@@ -29,7 +35,10 @@ class _MyImageState extends State<MyImage> {
     final screenSize = MediaQuery.of(context).size;
     return Scaffold(
         appBar: AppBar(
-          title: Text(widget.arguments["title"]),
+          // 1、原生路由接收数据
+          //title: Text(widget.arguments["title"]),
+          // 2、Get方式路由跳转接收数据
+          title: Text(Get.arguments['title']),
         ),
         body: GridView.count(
           scrollDirection: Axis.vertical,

@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter01/Module_Home/HomePageItem.dart';
+import 'package:get/get.dart';
 
 class MyAnimated extends StatefulWidget {
-  final Map arguments;
-  const MyAnimated({Key? key, required this.arguments}) : super(key: key);
+  // 1、原生路由接收数据
+  // final Map arguments;
+  // const MyAnimated({super.key, required this.arguments});
+  // 2、Get方式路由 不需要 arguments 参数、可通过 Get.arguments 获取参数
+  const MyAnimated({
+    super.key,
+  });
 
   @override
   State<MyAnimated> createState() => _MyAnimatedState();
@@ -73,7 +79,7 @@ class _MyAnimatedState extends State<MyAnimated> {
               Navigator.pushNamed(context, '/home_Ani_Hero', arguments: e);
               break;
             default:
-              Navigator.pushNamed(context, '/home_Ani_show', arguments: e);
+              Navigator.pushNamed(context, '/home_Ani_Show', arguments: e);
           }
         },
         child: HomePageItem(
@@ -89,7 +95,10 @@ class _MyAnimatedState extends State<MyAnimated> {
     final screenSize = MediaQuery.of(context).size;
     return Scaffold(
         appBar: AppBar(
-          title: Text(widget.arguments["title"]),
+          // 1、原生路由接收数据
+          //title: Text(widget.arguments["title"]),
+          // 2、Get方式路由跳转接收数据
+          title: Text(Get.arguments['title']),
         ),
         body: GridView.count(
           scrollDirection: Axis.vertical,
@@ -102,8 +111,13 @@ class _MyAnimatedState extends State<MyAnimated> {
 }
 
 class MyAnimated0 extends StatefulWidget {
-  final Map arguments;
-  const MyAnimated0({super.key, required this.arguments});
+  // 1、原生路由接收数据
+  // final Map arguments;
+  // const MyAnimated0({super.key, required this.arguments});
+  // 2、Get方式路由 不需要 arguments 参数、可通过 Get.arguments 获取参数
+  const MyAnimated0({
+    super.key,
+  });
 
   @override
   State<MyAnimated0> createState() => _MyAnimated0State();
@@ -132,7 +146,7 @@ class _MyAnimated0State extends State<MyAnimated0>
 
   // 展示动画类型
   Widget showWidget() {
-    var sType = widget.arguments['type'] as int;
+    var sType = Get.arguments['type'] as int;
     switch (sType) {
       case 1:
         // 属性动画 1、动画位移
@@ -353,12 +367,15 @@ class _MyAnimated0State extends State<MyAnimated0>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.arguments["title"]),
+        // 1、原生路由接收数据
+        //title: Text(widget.arguments["title"]),
+        // 2、Get方式路由跳转接收数据
+        title: Text(Get.arguments['title']),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           setState(() {
-            var type = widget.arguments['type'];
+            var type = Get.arguments['type'];
             if (type == 10) {
               flag ? _controller.forward() : _controller.reverse();
               flag = !flag;
