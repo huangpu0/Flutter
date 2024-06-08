@@ -164,7 +164,6 @@
 				701CA3C0C2D8A9F0C68AE230 /* Pods-RunnerTests.release.xcconfig */,
 				780E4BEAF4DFDA4B9623717B /* Pods-RunnerTests.profile.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -481,7 +480,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
-				DEVELOPMENT_TEAM = L46VAD5CFH;
+				DEVELOPMENT_TEAM = 4VN752HTB2;
 				ENABLE_BITCODE = NO;
 				FLUTTER_BUILD_MODE = "";
 				INFOPLIST_FILE = Runner/Info.plist;
@@ -489,7 +488,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.basic.cn.st;
+				PRODUCT_BUNDLE_IDENTIFIER = com.basic.cn.uat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -611,7 +610,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
-				DEVELOPMENT_TEAM = L46VAD5CFH;
+				DEVELOPMENT_TEAM = 4VN752HTB2;
 				ENABLE_BITCODE = NO;
 				FLUTTER_BUILD_MODE = profile;
 				INFOPLIST_FILE = Runner/Info.plist;
@@ -619,7 +618,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.basic.cn.st;
+				PRODUCT_BUNDLE_IDENTIFIER = com.basic.cn.uat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -635,7 +634,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
-				DEVELOPMENT_TEAM = L46VAD5CFH;
+				DEVELOPMENT_TEAM = 4VN752HTB2;
 				ENABLE_BITCODE = NO;
 				FLUTTER_BUILD_MODE = release;
 				INFOPLIST_FILE = Runner/Info.plist;
@@ -643,7 +642,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.basic.cn.st;
+				PRODUCT_BUNDLE_IDENTIFIER = com.basic.cn.uat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
