@@ -22,6 +22,7 @@ import 'package:flutter01/Module_Home/24_Get.dart';
 import 'package:flutter01/24_Get/24_Get_Home.dart';
 import 'package:flutter01/24_Get/24_Get_Mid_Home.dart';
 import 'package:flutter01/24_Get/24_Get_MiddleWare.dart';
+import 'package:flutter01/Module_Home/25_Http.dart';
 
 // MePage
 import 'package:flutter01/Module_Me/01_Padding.dart';
@@ -69,7 +70,8 @@ final List<GetPage> getPages = [
       name: '/home_Get_Mid',
       page: () => const MyHome24(),
       middlewares: [HomeGetMiddleWare()]),
-  GetPage(name: '/home_Get_Mid_Home', page: () => const MyHomeMid24()),
+  GetPage(name: '/home_Get_Mid_Home', page: () => const MyHomeMid24()), 
+  GetPage(name: '/home_Http', page: () => const MyHttp()),
 
   // MePage
   GetPage(name: '/me_Padding', page: () => const MyPadding()),

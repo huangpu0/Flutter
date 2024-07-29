@@ -14,6 +14,7 @@ enum RoutersEnum {
   gridView,
   pageView,
   get,
+  http,
   // MePage
   padding,
   row,
@@ -59,6 +60,8 @@ String routerName(RoutersEnum routersEnum) {
       return '/home_PageView';
     case RoutersEnum.get:
       return '/home_Get';
+    case RoutersEnum.http:
+    return '/home_Http';
     // MePage
     case RoutersEnum.padding:
       return '/me_Padding';
@@ -118,6 +121,8 @@ String routerTitle(RoutersEnum routersEnum) {
       return 'PageView';
     case RoutersEnum.get:
       return 'Get';
+    case RoutersEnum.http:
+      return 'Http';
     // MePage
     case RoutersEnum.padding:
       return 'Padding';

@@ -37,6 +37,7 @@ dependencies:
   fluttertoast: ^8.2.4 
   photo_view: ^0.14.0
   get: ^4.6.6
+  http: ^0.13.3 
   
 dev_dependencies:
   flutter_test:
